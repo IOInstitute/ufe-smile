@@ -60,5 +60,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>We use the data from the camera for the image recognition.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We use the data from the photo library for the image recognition.</string>
 </dict>
 </plist>
