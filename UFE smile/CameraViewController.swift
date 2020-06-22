@@ -28,7 +28,7 @@ class CameraViewController: UIViewController {
   private lazy var captureSession = AVCaptureSession()
   private lazy var sessionQueue = DispatchQueue(label: Constant.sessionQueueLabel)
   private var lastFrame: CMSampleBuffer?
-    let imageView = UIImageView(image: #imageLiteral(resourceName: "UFE Smile"))
+
 
   private lazy var previewOverlayView: UIImageView = {
 
@@ -52,7 +52,6 @@ class CameraViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-     imageView.frame = CGRect(x: 0, y:280, width: 380, height: 380)
 
     cameraView.frame = self.view.frame
     self.view.addSubview(cameraView)
@@ -115,13 +114,8 @@ class CameraViewController: UIViewController {
     }
     DispatchQueue.main.sync {
       for face in faces {
-         if face.smilingProbability >= 0.5 {
-                   
-               
-                   view.addSubview(imageView)
-               }else{
-                   imageView.removeFromSuperview()
-               }
+         
+        
         let normalizedRect = CGRect(
           x: face.frame.origin.x / width,
           y: face.frame.origin.y / height,
